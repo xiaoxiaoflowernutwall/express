@@ -1,14 +1,15 @@
-const express = require('express')
-const helmet = require('helmet')
+const Express = require("express");
+const BodyParser = require("body-parser");
+const MongoClient = require("mongodb").MongoClient;
+const ObjectId = require("mongodb").ObjectId;
 
-const app = express()
+var app = Express();
 
-// add some security-related headers to the response
-app.use(helmet())
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({	extended: true}));
 
-app.get('/', function(req, res){
-    res.set('Content-Type', 'text/html')
-    res.send('Hello,this is the root of our service!')
-})
+app.get("/hi",(request, response) =>{
+	response.send("Hello world");
+});
 
-module.exports = app
+module.exports = app;
