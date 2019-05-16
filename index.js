@@ -53,7 +53,7 @@ app.get("/notes/:id",(request, response) => {
 });
 
 const CONNECTION_URL = "mongodb+srv://admin:<password>@cluster0-vidvh.mongodb.net/test?retryWrites=true";
-const DATABSE_NAME = "Clusters0";
+const DATABSE_NAME = "Cluster0";
 
 app.post("/notes",(request,response) =>{
 
