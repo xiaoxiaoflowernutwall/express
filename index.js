@@ -8,8 +8,8 @@ var app = Express();
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({	extended: true}));
 
-const CONNECTION_URL = "mongodb+srv://root:root@cluster0-vidvh.mongodb.net/test?retryWrites=true";
-const DATABSE_NAME = "Cluster0";
+const CONNECTION_URL = "mongodb+srv://root:root@lab10-hsxde.mongodb.net/test?retryWrites=true";
+const DATABSE_NAME = "lab10";
 
 app.get("/notes",(request, response) =>{
 
