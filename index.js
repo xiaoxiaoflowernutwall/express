@@ -8,6 +8,9 @@ var app = Express();
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({	extended: true}));
 
+const CONNECTION_URL = "mongodb+srv://root:root@cluster0-vidvh.mongodb.net/test?retryWrites=true";
+const DATABSE_NAME = "Cluster0";
+
 app.get("/notes",(request, response) =>{
 
 	MongoClient.connect(CONNECTION_URL,{useNewUrlParser: true},(error,client)=>{
@@ -51,9 +54,6 @@ app.get("/notes/:id",(request, response) => {
 		});
 	});
 });
-
-const CONNECTION_URL = "mongodb+srv://admin:<password>@cluster0-vidvh.mongodb.net/test?retryWrites=true";
-const DATABSE_NAME = "Cluster0";
 
 app.post("/notes",(request,response) =>{
 
