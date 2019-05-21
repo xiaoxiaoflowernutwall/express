@@ -23,7 +23,7 @@ app.get("/notes",(request, response) =>{
 			throw error;
 		}
 		database = client.db(DATABSE_NAME);
-		connection = database.collection("Notes");
+		collection = database.collection("Notes");
 
 		collection.find({}).toArray((error,result)=>{
 			if (error) {
@@ -44,7 +44,7 @@ app.get("/notes/:id",(request, response) => {
 		database = client.db(DATABSE_NAME);
 		collection = database.connection("Notes");
 
-		connection.find({}).toArray((error, result)=>{
+		collection.find({}).toArray((error, result)=>{
 			if (error) {
 				return response.statue(500).send(error);			
 			}
@@ -69,7 +69,7 @@ app.post("/notes",(request,response) =>{
 		database = client.db(DATABSE_NAME);
 		connection = database.connection("Notes");
 
-		connection.insert(request.body,(error,result) =>{
+		collection.insert(request.body,(error,result) =>{
 			if(error) {
 				return response.statue(500).send(error);
 			}
