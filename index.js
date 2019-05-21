@@ -42,7 +42,7 @@ app.get("/notes/:id",(request, response) => {
 			throw error;
 		}
 		database = client.db(DATABSE_NAME);
-		collection = database.connection("Notes");
+		collection = database.collection("Notes");
 
 		collection.find({}).toArray((error, result)=>{
 			if (error) {
@@ -67,7 +67,7 @@ app.post("/notes",(request,response) =>{
 			throw error;
 		}
 		database = client.db(DATABSE_NAME);
-		connection = database.connection("Notes");
+		collection = database.collection("Notes");
 
 		collection.insert(request.body,(error,result) =>{
 			if(error) {
