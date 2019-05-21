@@ -11,6 +11,8 @@ app.use(BodyParser.urlencoded({	extended: true}));
 const CONNECTION_URL = "mongodb+srv://root:root@lab10-hsxde.mongodb.net/test?retryWrites=true";
 const DATABSE_NAME = "lab10";
 
+var database, collection;
+
 app.get("/test", (request, response) => {response.send("This is working")})
 
 app.get("/notes",(request, response) =>{
